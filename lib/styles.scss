@@ -2,6 +2,12 @@ body {
   background-color: #648381;
   font-family: "Open Sans";
 }
+input {
+  font-size: 1rem;
+}
+form {
+  display: inline-block;
+}
 
 .grid-container {
   display: grid;
@@ -33,10 +39,32 @@ body {
   grid-area: mainHeader;
   justify-self: center;
 }
+.mainHeader h1{
+  font-size: 3rem;
+}
 
-.locationSearchContainer { grid-area: locationSearchContainer; }
+.locationSearchContainer {
+  grid-area: locationSearchContainer;
+ }
 
-.loginRegisterContainer { grid-area: loginRegisterContainer; }
+ #submitCityStateButton {
+  background-color: #575761;
+  color: white;
+  padding: 5px;
+  // margin: 15px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // font-size: 1rem;
+  border-radius: 10px;
+ }
+
+
+
+.loginRegisterContainer {
+  grid-area: loginRegisterContainer;
+ }
 
 // .Header {
 //   grid-area: Header;
@@ -70,8 +98,15 @@ body {
   grid-area: currentWeatherSummary;
   justify-self: center;
 }
+.currentTemp {
+  font-size: 2rem;
+}
 
-.cityState { grid-area: cityState; }
+.searchLocation {
+  grid-area: searchLocation;
+  font-size: 2rem;
+  text-align: center;
+}
 
 .lowHighTemps { grid-area: lowHighTemps; }
 

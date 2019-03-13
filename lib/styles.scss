@@ -86,6 +86,8 @@ form {
 // .mainheader { grid-area: mainHeader; }
 
 .current-weather {
+  background-color: #575761;
+  opacity: 0.9.;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -95,7 +97,6 @@ form {
   border-style: solid;
   border-radius: 10px;
   margin: 10px;
-
 }
 
 .currentWeatherSummary {

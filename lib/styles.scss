@@ -55,39 +55,16 @@ form {
   background-color: #575761;
   color: white;
   padding: 5px;
-  // margin: 15px;
-  // padding-top: 5px;
-  // padding-bottom: 5px;
-  // padding-left: 15px;
-  // padding-right: 15px;
-  // font-size: 1rem;
   border-radius: 10px;
  }
-
-
 
 .loginRegisterContainer {
   grid-area: loginRegisterContainer;
  }
 
-// .Header {
-//   grid-area: Header;
-//   display: inline-block;
-// }
-
-// .headerContainer {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr ;
-//   grid-template-rows: 1.1fr 0.9fr;
-//   grid-template-areas: "locationSearchContainer mainHeader ." "locationSearchContainer mainHeader .";
-//   grid-area: headerContainer;
-// }
-//
-// .mainheader { grid-area: mainHeader; }
-
 .current-weather {
   background-color: #575761;
-  opacity: 0.9.;
+  opacity: 0.9;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -132,6 +109,8 @@ form {
 .weatherLinks { grid-area: weatherLinks; }
 
 .daily-weather {
+  background-color: #575761;
+  opacity: 0.9;
   grid-area: daily-weather;
   margin: 10px;
   padding: 10px;
@@ -140,6 +119,8 @@ form {
 }
 
 .hourly-forecast {
+  background-color: #575761;
+  opacity: 0.9;
   grid-area: hourly-forecast;
   padding: 10px;
   margin: 10px;
@@ -148,6 +129,8 @@ form {
 }
 
 .extended-forecast {
+  background-color: #575761;
+  opacity: 0.9;
   grid-area: extended-forecast;
   padding: 10px;
   margin: 10px;

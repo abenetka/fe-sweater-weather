@@ -97,6 +97,7 @@ form {
 .currentWeatherSummary {
   grid-area: currentWeatherSummary;
   justify-self: center;
+  margin: 50px;
 }
 .currentTemp {
   font-size: 2rem;
@@ -104,8 +105,10 @@ form {
 
 .searchLocation {
   grid-area: searchLocation;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
+  margin: 50px;
+
 }
 
 .lowHighTemps { grid-area: lowHighTemps; }

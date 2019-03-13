@@ -1,1 +1,151 @@
+body {
+  background-color: #648381;
+  font-family: "Open Sans";
+}
+input {
+  font-size: 1rem;
+}
+form {
+  display: inline-block;
+}
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "headerContainer headerContainer headerContainer headerContainer"
+  "current-weather current-weather daily-weather daily-weather"
+  "current-weather current-weather daily-weather daily-weather"
+  "current-weather current-weather daily-weather daily-weather"
+  "hourly-forecast hourly-forecast hourly-forecast hourly-forecast"
+   "hourly-forecast hourly-forecast hourly-forecast hourly-forecast"
+   "extended-forecast extended-forecast extended-forecast extended-forecast"
+   "extended-forecast extended-forecast extended-forecast extended-forecast"
+   "extended-forecast extended-forecast extended-forecast extended-forecast"
+   "extended-forecast extended-forecast extended-forecast extended-forecast"
+   "extended-forecast extended-forecast extended-forecast extended-forecast";
+
+}
+
+.headerContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "locationSearchContainer mainHeader mainHeader loginRegisterContainer" "locationSearchContainer mainHeader mainHeader loginRegisterContainer";
+  grid-area: headerContainer;
+}
+
+.mainHeader {
+  grid-area: mainHeader;
+  justify-self: center;
+}
+.mainHeader h1{
+  font-size: 3rem;
+}
+
+.locationSearchContainer {
+  grid-area: locationSearchContainer;
+ }
+
+ #submitCityStateButton {
+  background-color: #575761;
+  color: white;
+  padding: 5px;
+  // margin: 15px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // font-size: 1rem;
+  border-radius: 10px;
+ }
+
+
+
+.loginRegisterContainer {
+  grid-area: loginRegisterContainer;
+ }
+
+// .Header {
+//   grid-area: Header;
+//   display: inline-block;
+// }
+
+// .headerContainer {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr ;
+//   grid-template-rows: 1.1fr 0.9fr;
+//   grid-template-areas: "locationSearchContainer mainHeader ." "locationSearchContainer mainHeader .";
+//   grid-area: headerContainer;
+// }
+//
+// .mainheader { grid-area: mainHeader; }
+
+.current-weather {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "currentWeatherSummary searchLocation weatherLinks" "lowHighTemps currentDateTime weatherLinks";
+  grid-area: current-weather;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 10px;
+
+}
+
+.currentWeatherSummary {
+  grid-area: currentWeatherSummary;
+  justify-self: center;
+  margin: auto;
+}
+.currentTemp {
+  font-size: 2rem;
+}
+
+.searchLocation {
+  grid-area: searchLocation;
+  text-align: center;
+  margin: auto;
+}
+.cityState {
+  font-size: 2.5rem;
+}
+
+.lowHighTemps {
+  grid-area: lowHighTemps;
+  text-align: center;
+  margin: auto
+}
+
+.currentDateTime {
+  grid-area: currentDateTime;
+  text-align: center;
+  margin: auto
+}
+
+.weatherLinks { grid-area: weatherLinks; }
+
+.daily-weather {
+  grid-area: daily-weather;
+  margin: 10px;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.hourly-forecast {
+  grid-area: hourly-forecast;
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.extended-forecast {
+  grid-area: extended-forecast;
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-radius: 10px;
+}

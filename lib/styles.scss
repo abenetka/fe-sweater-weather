@@ -16,33 +16,40 @@ form {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "headerContainer headerContainer headerContainer headerContainer"
-  "current-weather current-weather daily-weather daily-weather"
-  "current-weather current-weather daily-weather daily-weather"
-  "current-weather current-weather daily-weather daily-weather"
-  "hourly-forecast hourly-forecast hourly-forecast hourly-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast";
-
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "headerContainer headerContainer"
+  "current-weather daily-weather"
+  "hourly-forecast hourly-forecast"
+   "extended-forecast extended-forecast";
 }
+// .grid-container {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+//   grid-template-areas: "headerContainer headerContainer headerContainer headerContainer"
+//   "current-weather current-weather daily-weather daily-weather"
+//   // "current-weather current-weather daily-weather daily-weather"
+//   // "current-weather current-weather daily-weather daily-weather"
+//   "hourly-forecast hourly-forecast hourly-forecast hourly-forecast"
+//    "extended-forecast extended-forecast extended-forecast extended-forecast"
+//    "extended-forecast extended-forecast extended-forecast extended-forecast"
+//    "extended-forecast extended-forecast extended-forecast extended-forecast"
+//    "extended-forecast extended-forecast extended-forecast extended-forecast"
+//    "extended-forecast extended-forecast extended-forecast extended-forecast";
+//
+// }
 
 .headerContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "locationSearchContainer mainHeader mainHeader loginRegisterContainer" "locationSearchContainer mainHeader mainHeader loginRegisterContainer";
   grid-area: headerContainer;
+  display: inline-block;
+  text-align: center;
 }
 
-.mainHeader {
-  grid-area: mainHeader;
-  justify-self: center;
-}
+// .mainHeader {
+//   grid-area: mainHeader;
+//   justify-self: center;
+// }
 .mainHeader h1{
   font-size: 3rem;
 }
@@ -65,10 +72,10 @@ form {
 .current-weather {
   background-color: #648381;
   opacity: 0.9;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "currentWeatherSummary searchLocation weatherLinks" "lowHighTemps currentDateTime weatherLinks";
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  // grid-template-areas: "currentWeatherSummary searchLocation weatherLinks" "lowHighTemps currentDateTime weatherLinks";
   grid-area: current-weather;
   padding: 10px;
   border-style: none;
@@ -76,39 +83,39 @@ form {
   margin: 10px;
 }
 
-.currentWeatherSummary {
-  grid-area: currentWeatherSummary;
-  justify-self: center;
-  margin: auto;
-}
+// .currentWeatherSummary {
+//   grid-area: currentWeatherSummary;
+//   justify-self: center;
+//   margin: auto;
+// }
 .currentTemp {
   font-size: 2rem;
 }
 
-.searchLocation {
-  grid-area: searchLocation;
-  text-align: center;
-  margin: auto;
-}
+// .searchLocation {
+//   grid-area: searchLocation;
+//   text-align: center;
+//   margin: auto;
+// }
 .cityState {
   font-size: 2.5rem;
 }
+//
+// .lowHighTemps {
+//   grid-area: lowHighTemps;
+//   text-align: center;
+//   margin: auto
+// }
 
-.lowHighTemps {
-  grid-area: lowHighTemps;
-  text-align: center;
-  margin: auto
-}
-
-.currentDateTime {
-  grid-area: currentDateTime;
-  text-align: center;
-  margin: auto
-}
-
-.weatherLinks {
-  grid-area: weatherLinks;
-}
+// .currentDateTime {
+//   grid-area: currentDateTime;
+//   text-align: center;
+//   margin: auto
+// }
+//
+// .weatherLinks {
+//   grid-area: weatherLinks;
+// }
 
 .daily-weather {
   background-color: #648381;

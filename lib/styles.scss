@@ -1,5 +1,6 @@
 body {
-  background-color: #648381;
+  // background-color: #648381;
+  background: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60');
   font-family: "Open Sans";
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,41 +16,23 @@ form {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "headerContainer headerContainer headerContainer headerContainer"
-  "current-weather current-weather daily-weather daily-weather"
-  "current-weather current-weather daily-weather daily-weather"
-  "current-weather current-weather daily-weather daily-weather"
-  "hourly-forecast hourly-forecast hourly-forecast hourly-forecast"
-   "hourly-forecast hourly-forecast hourly-forecast hourly-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast"
-   "extended-forecast extended-forecast extended-forecast extended-forecast";
-
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "headerContainer headerContainer"
+  "current-weather daily-weather"
+  "hourly-forecast hourly-forecast"
+   "extended-forecast extended-forecast";
 }
 
 .headerContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "locationSearchContainer mainHeader mainHeader loginRegisterContainer" "locationSearchContainer mainHeader mainHeader loginRegisterContainer";
   grid-area: headerContainer;
+  display: inline-block;
+  text-align: center;
 }
 
-.mainHeader {
-  grid-area: mainHeader;
-  justify-self: center;
-}
 .mainHeader h1{
   font-size: 3rem;
 }
-
-.locationSearchContainer {
-  grid-area: locationSearchContainer;
- }
 
  #submitCityStateButton {
   background-color: #575761;
@@ -58,82 +41,71 @@ form {
   border-radius: 10px;
  }
 
-.loginRegisterContainer {
-  grid-area: loginRegisterContainer;
- }
-
 .current-weather {
-  background-color: #575761;
+  background-color: #648381;
   opacity: 0.9;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "currentWeatherSummary searchLocation weatherLinks" "lowHighTemps currentDateTime weatherLinks";
   grid-area: current-weather;
   padding: 10px;
-  border-style: solid;
+  border-style: none;
   border-radius: 10px;
   margin: 10px;
 }
-
-.currentWeatherSummary {
-  grid-area: currentWeatherSummary;
-  justify-self: center;
-  margin: auto;
-}
-.currentTemp {
-  font-size: 2rem;
+.current-weather h4 {
+  text-transform: uppercase;
+  margin-left: 30px;
 }
 
-.searchLocation {
-  grid-area: searchLocation;
-  text-align: center;
-  margin: auto;
-}
 .cityState {
-  font-size: 2.5rem;
+  font-size: 4rem;
+  margin: auto 20px;
 }
 
-.lowHighTemps {
-  grid-area: lowHighTemps;
-  text-align: center;
-  margin: auto
+.currentTemp {
+  font-size: 3rem;
+  margin-left: 30px;
 }
-
-.currentDateTime {
-  grid-area: currentDateTime;
-  text-align: center;
-  margin: auto
+.currentSummary, .feelsLikeTemp, .currentDateTime {
+  margin-left: 30px;
 }
-
-.weatherLinks { grid-area: weatherLinks; }
 
 .daily-weather {
-  background-color: #575761;
+  background-color: #648381;
   opacity: 0.9;
   grid-area: daily-weather;
   margin: 10px;
   padding: 10px;
-  border-style: solid;
+  border-style: none;
   border-radius: 10px;
 }
 
 .hourly-forecast {
-  background-color: #575761;
+  background-color: #648381;
   opacity: 0.9;
   grid-area: hourly-forecast;
-  padding: 10px;
-  margin: 10px;
-  border-style: solid;
+  margin: 15px;
+  padding: 25px;
+  border-style: none;
   border-radius: 10px;
 }
 
 .extended-forecast {
-  background-color: #575761;
+  background-color: #648381;
   opacity: 0.9;
   grid-area: extended-forecast;
-  padding: 10px;
   margin: 10px;
-  border-style: solid;
+  padding: 10px;
+  border-style: none;
   border-radius: 10px;
+  text-align: center;
+}
+.extended-forecast th, td, tr {
+  padding: 20px;
+  text-align: center;
+}
+.tempRows {
+  font-size: 1.5rem;
+}
+#dayscolumn {
+  font-size: 1.2rem;
+
 }

@@ -134,10 +134,20 @@ form {
   background-color: #648381;
   opacity: 0.9;
   grid-area: extended-forecast;
-  padding: 25px;
+  margin: 10px;
+  padding: 10px;
   border-style: none;
   border-radius: 10px;
+  text-align: center;
 }
 .extended-forecast th, td, tr {
-  padding: 25px;
+  padding: 20px;
+  text-align: center;
+}
+.tempRows {
+  font-size: 1.5rem;
+}
+#dayscolumn {
+  font-size: 1.2rem;
+
 }

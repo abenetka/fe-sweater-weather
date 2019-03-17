@@ -19,9 +19,39 @@ form {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: "headerContainer headerContainer"
-  "current-weather daily-weather"
+  "current-weather weather-favorites"
   "hourly-forecast hourly-forecast"
    "extended-forecast extended-forecast";
+}
+.weather-favorites {
+  grid-area: weather-favorites;
+  background-color: #648381;
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "daily-weather favorite-locations"
+}
+.daily-weather {
+  background-color: #648381;
+  opacity: 0.9;
+  grid-area: daily-weather;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.favorite-locations {
+  background-color: #648381;
+  opacity: 0.9;
+  grid-area: favorite-locations;
+  padding: 10px;
+  margin: 10px;
+  text-align: right;
+  border-style: none;
+  border-radius: 10px;
 }
 
 .headerContainer {
@@ -68,15 +98,6 @@ form {
   margin-left: 30px;
 }
 
-.daily-weather {
-  background-color: #648381;
-  opacity: 0.9;
-  grid-area: daily-weather;
-  margin: 10px;
-  padding: 10px;
-  border-style: none;
-  border-radius: 10px;
-}
 
 .hourly-forecast {
   background-color: #648381;

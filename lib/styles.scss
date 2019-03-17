@@ -27,6 +27,10 @@ form {
   grid-area: weather-favorites;
   background-color: #648381;
   opacity: 0.9;
+  border-style: none;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;

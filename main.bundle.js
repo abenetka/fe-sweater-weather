@@ -164,10 +164,35 @@
 	    });
 	  }
 
+	  function postFavorites(cityState) {
+	    $.post("https://sweather-weather.herokuapp.com/api/v1/favorites?location=" + cityState + "&api_key=71caee34584ad1b2fcc7", function (data, status) {});
+	  }
+
+	  function getFavorites() {
+	    $.get("https://sweather-weather.herokuapp.com/api/v1/favorites?api_key=71caee34584ad1b2fcc7", function (data, status) {
+	      var favorites = data["data"]["attributes"]["favorites"];
+	      debugger;
+	      $(".favLocation1").text(favorites[0]["location"]);
+	      $(".favLocation2").text(favorites[1]["location"]);
+	      $(".favLocation3").text(favorites[2]["location"]);
+	      $(".favLocation4").text(favorites[3]["location"]);
+	      $(".favLocation5").text(favorites[4]["location"]);
+	    });
+	  }
+	  // function getFavorites() {
+	  //   $.get(`https://sweather-weather.herokuapp.com/api/v1/favorites?api_key=71caee34584ad1b2fcc7`, function(data, status) {
+	  //     let favorites = data["data"]["attributes"]["favorites"]
+	  //     debugger;
+	  //     $.map( favorites, function( n ) {
+	  //       $(".favLocation").text(n["location"])
+	  //     });
+	  //   });
+	  // }
+
 	  $(".hourly-forecast").hide();
 	  $(".extended-forecast").hide();
 	  $(".current-weather").hide();
-	  $(".daily-weather").hide();
+	  $(".weather-favorites").hide();
 
 	  $("#submitCityStateButton").click(function () {
 	    event.preventDefault();
@@ -175,13 +200,19 @@
 	    $(".hourly-forecast").show();
 	    $(".extended-forecast").show();
 	    $(".current-weather").show();
-	    $(".daily-weather").show();
+	    $(".weather-favorites").show();
 
 	    getBackground(cityState);
 	    getCurrentForecast(cityState);
 	    getDailyForecast(cityState);
 	    getHourlyForecast(cityState);
 	    getExtendedForecast(cityState);
+	    getFavorites(cityState);
+	  });
+
+	  $("#addFavoriteButton").click(function () {
+	    event.preventDefault();
+	    postFavorites();
 	  });
 	});
 
@@ -220,7 +251,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background: url(\"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60\");\n  font-family: \"Open Sans\";\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: fixed; }\n\ninput {\n  font-size: 1rem; }\n\nform {\n  display: inline-block; }\n\n.grid-container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: auto auto auto auto;\n  grid-template-areas: \"headerContainer headerContainer\" \"current-weather daily-weather\" \"hourly-forecast hourly-forecast\" \"extended-forecast extended-forecast\"; }\n\n.headerContainer {\n  grid-area: headerContainer;\n  display: inline-block;\n  text-align: center; }\n\n.mainHeader h1 {\n  font-size: 3rem; }\n\n#submitCityStateButton {\n  background-color: #575761;\n  color: white;\n  padding: 5px;\n  border-radius: 10px; }\n\n.current-weather {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: current-weather;\n  padding: 10px;\n  border-style: none;\n  border-radius: 10px;\n  margin: 10px; }\n\n.current-weather h4 {\n  text-transform: uppercase;\n  margin-left: 30px; }\n\n.cityState {\n  font-size: 4rem;\n  margin: auto 20px; }\n\n.currentTemp {\n  font-size: 3rem;\n  margin-left: 30px; }\n\n.currentSummary, .feelsLikeTemp, .currentDateTime {\n  margin-left: 30px; }\n\n.daily-weather {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: daily-weather;\n  margin: 10px;\n  padding: 10px;\n  border-style: none;\n  border-radius: 10px; }\n\n.hourly-forecast {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: hourly-forecast;\n  margin: 15px;\n  padding: 25px;\n  border-style: none;\n  border-radius: 10px; }\n\n.extended-forecast {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: extended-forecast;\n  margin: 10px;\n  padding: 10px;\n  border-style: none;\n  border-radius: 10px;\n  text-align: center; }\n\n.extended-forecast th, td, tr {\n  padding: 20px;\n  text-align: center; }\n\n.tempRows {\n  font-size: 1.5rem; }\n\n#dayscolumn {\n  font-size: 1.2rem; }\n", ""]);
+	exports.push([module.id, "body {\n  background: url(\"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60\");\n  font-family: \"Open Sans\";\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: fixed; }\n\ninput {\n  font-size: 1rem; }\n\nform {\n  display: inline-block; }\n\n.grid-container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: auto auto auto auto;\n  grid-template-areas: \"headerContainer headerContainer\" \"current-weather weather-favorites\" \"hourly-forecast hourly-forecast\" \"extended-forecast extended-forecast\"; }\n\n.weather-favorites {\n  grid-area: weather-favorites;\n  background-color: #648381;\n  opacity: 0.9;\n  border-style: none;\n  border-radius: 10px;\n  margin: 10px;\n  padding: 10px;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: auto;\n  grid-template-areas: \"daily-weather favorite-locations\"; }\n\n.daily-weather {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: daily-weather;\n  margin: 10px;\n  padding: 10px;\n  text-align: left;\n  border-style: none;\n  border-radius: 10px; }\n\n.favorite-locations {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: favorite-locations;\n  padding: 10px;\n  margin: 10px;\n  text-align: right;\n  border-style: none;\n  border-radius: 10px; }\n\n.headerContainer {\n  grid-area: headerContainer;\n  display: inline-block;\n  text-align: center; }\n\n.mainHeader h1 {\n  font-size: 3rem; }\n\n#submitCityStateButton {\n  background-color: #575761;\n  color: white;\n  padding: 5px;\n  border-radius: 10px; }\n\n.current-weather {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: current-weather;\n  padding: 10px;\n  border-style: none;\n  border-radius: 10px;\n  margin: 10px; }\n\n.current-weather h4 {\n  text-transform: uppercase;\n  margin-left: 30px; }\n\n.cityState {\n  font-size: 4rem;\n  margin: auto 20px; }\n\n.currentTemp {\n  font-size: 3rem;\n  margin-left: 30px; }\n\n.currentSummary, .feelsLikeTemp, .currentDateTime {\n  margin-left: 30px; }\n\n.hourly-forecast {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: hourly-forecast;\n  margin: 15px;\n  padding: 25px;\n  border-style: none;\n  border-radius: 10px; }\n\n.extended-forecast {\n  background-color: #648381;\n  opacity: 0.9;\n  grid-area: extended-forecast;\n  margin: 10px;\n  padding: 10px;\n  border-style: none;\n  border-radius: 10px;\n  text-align: center; }\n\n.extended-forecast th, td, tr {\n  padding: 20px;\n  text-align: center; }\n\n.tempRows {\n  font-size: 1.5rem; }\n\n#dayscolumn {\n  font-size: 1.2rem; }\n", ""]);
 
 	// exports
 

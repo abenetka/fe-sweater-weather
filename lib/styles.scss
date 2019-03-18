@@ -1,5 +1,5 @@
 body {
-  // background-color: #648381;
+  background-color: #648381;
   background: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60');
   font-family: "Open Sans";
   background-size: cover;
@@ -62,6 +62,7 @@ form {
   grid-area: headerContainer;
   display: inline-block;
   text-align: center;
+  margin: 20px;
 }
 
 .mainHeader h1{
@@ -73,6 +74,16 @@ form {
   color: white;
   padding: 5px;
   border-radius: 10px;
+  border-style: none;
+ }
+
+ #addFavoriteButton {
+  background-color: #575761;
+  color: white;
+  padding: 5px;
+  margin: 20px;
+  border-radius: 10px;
+  border-style: none;
  }
 
 .current-weather {

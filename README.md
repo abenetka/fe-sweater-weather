@@ -7,7 +7,6 @@ Sweater Weather FE is a one week, solo project in Module 4 of the Turing School 
 
 ## Setup
 
- Introduction, Initial Setup, How to Use, Known Issues, Running Tests, How to Contribute, Core Contributors, Schema Design, and Tech Stack Li
  ```
 $ git clone git@github.com:abenetka/fe-sweater-weather.git
 $ cd fe-sweater-weather

@@ -27,9 +27,11 @@ Once the server is running, visit in your browser:
 
 <img width="1436" alt="Landing Page Screen shot" src="https://user-images.githubusercontent.com/41347275/54501011-172dc980-48e8-11e9-96f0-9fc96868da08.png">
 
-<img width="1431" alt="Screen Shot 2019-03-17 at 7 18 32 PM" src="https://user-images.githubusercontent.com/41347275/54501202-7d671c00-48e9-11e9-85f0-08ab147c25cb.png">
-<img width="524" alt="Screen Shot 2019-03-17 at 7 18 15 PM" src="https://user-images.githubusercontent.com/41347275/54501203-7d671c00-48e9-11e9-85b5-120033277513.png">
 <img width="1440" alt="Screen Shot 2019-03-17 at 7 18 23 PM" src="https://user-images.githubusercontent.com/41347275/54501204-7d671c00-48e9-11e9-8a6e-f5c24b8869de.png">
+
+<img width="1431" alt="Screen Shot 2019-03-17 at 7 18 32 PM" src="https://user-images.githubusercontent.com/41347275/54501202-7d671c00-48e9-11e9-85f0-08ab147c25cb.png">
+
+
 
 
 ## Built With

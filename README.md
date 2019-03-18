@@ -43,4 +43,4 @@ Once the server is running, visit in your browser:
 
 ## Developer
 
-* Ali Benetka [GH:](https://www.github.com/abenetka)
+* Ali Benetka [GH](https://www.github.com/abenetka)
